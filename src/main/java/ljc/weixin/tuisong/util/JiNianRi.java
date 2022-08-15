@@ -27,6 +27,12 @@ public class JiNianRi {
      */
     static String shengRi = "2023-02-22";
 
+
+    /**
+     * 客户生日
+     */
+    static String shengRiJia = "2023-05-19";
+
     private static SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
     /**
@@ -78,5 +84,7 @@ public class JiNianRi {
         return before(shengRi);
     }
 
-
+    public static int getShengRiJia(){
+        return before(shengRiJia);
+    }
 }

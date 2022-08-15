@@ -26,7 +26,12 @@ public class Pusher {
 
     public static String templateIdL = "RO0X9ch8vGfNdBOQtxZ39BRY2-VNR2cmJ8ZEKyzi1yU";
 
-    public static void push(String openId ,String templateId){
+    public static String templateIdJiaZ = "jimcM4-DvFFoZUJ1MMy-Le391FxMb3Cg-F6HNxm7btE";
+
+    public static String templateIdJiaL = "rkgaCoitfXltFI-K8DRyxg80jqmrY-NwbdNH_QfViNE";
+
+    public static void push(String openId ,String templateId,String district_id){
+        JSONObject todayWeather = Tianqi.getNanjiTianqi(district_id);
         //1，配置
         WxMpInMemoryConfigStorage wxStorage = new WxMpInMemoryConfigStorage();
         wxStorage.setAppId(appId);
@@ -43,7 +48,6 @@ public class Pusher {
         //        templateMessage.addData(new WxMpTemplateData("name", "value", "#FF00FF"));
         //                templateMessage.addData(new WxMpTemplateData(name2, value2, color2));
         //填写变量信息，比如天气之类的
-        JSONObject todayWeather = Tianqi.getNanjiTianqi();
         templateMessage.addData(new WxMpTemplateData("riqi",todayWeather.getString("date") + "  "+ todayWeather.getString("week"),"#00BFFF"));
         templateMessage.addData(new WxMpTemplateData("tianqi",todayWeather.getString("text_day"),"#00BFFF"));
         templateMessage.addData(new WxMpTemplateData("low",todayWeather.getString("low") + "","#7FFFD4"));
@@ -54,6 +58,7 @@ public class Pusher {
         templateMessage.addData(new WxMpTemplateData("lianai", JiNianRi.getLianAi()+"","#FF1493"));
         templateMessage.addData(new WxMpTemplateData("jilianri", JiNianRi.getJiLianRi()+"","#FF6347"));
         templateMessage.addData(new WxMpTemplateData("shengri", JiNianRi.getShengRi()+"","#FFA500"));
+        templateMessage.addData(new WxMpTemplateData("shengrijia", JiNianRi.getShengRiJia()+"","#FFA500"));
         templateMessage.addData(new WxMpTemplateData("jinju", CaiHongPi.getJinJu()+"","#C71585"));
         //templateMessage.addData(new WxMpTemplateData("jiehun",JiNianRi.getJieHun()+""));
         String beizhu = "";

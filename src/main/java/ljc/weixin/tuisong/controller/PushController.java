@@ -8,8 +8,8 @@ package ljc.weixin.tuisong.controller;
  */
 
 import ljc.weixin.tuisong.util.Pusher;
+import ljc.weixin.tuisong.util.Tianqi;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -20,27 +20,26 @@ public class PushController {
 
     /**
      * 微信测试账号推送
-     *
      */
     @GetMapping("/push")
     public void push() {
-        Pusher.push(mxp, Pusher.templateIdZ);
+        Pusher.push(mxp, Pusher.templateIdZ, Tianqi.district_id);
     }
 
     /**
      * 微信测试账号推送
-     * */
+     */
     @GetMapping("/push/zyd")
     public void pushZyd() {
-        Pusher.push(zyd, Pusher.templateIdZ);
+        Pusher.push(zyd, Pusher.templateIdZ, Tianqi.district_id);
     }
 
 
     /**
      * 微信测试账号推送
-     * */
-    @GetMapping("/push/{id}")
-    public void pushId(@PathVariable("id") String id) {
-        Pusher.push(id, Pusher.templateIdZ);
+     */
+    @GetMapping("/push/test")
+    public void pushId(String id, String templateId, String districtId) {
+        Pusher.push(id, templateId, districtId);
     }
 }

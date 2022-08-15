@@ -12,9 +12,11 @@ import com.alibaba.fastjson.JSONObject;
  */
 public class Tianqi {
     private static String ak = "c2krpmnsMGjiDjmUnYMLHeICR0meZ2y6";
-    private static String district_id = "430111";
+    public static String district_id = "430111";// 长沙
 
-    public static JSONObject getNanjiTianqi() {
+    public static String district_id_jia = "510800";// 广元
+
+    public static JSONObject getNanjiTianqi(String district_id) {
         String result = null;
         JSONObject today = new JSONObject();
         try {
@@ -31,6 +33,6 @@ public class Tianqi {
     }
 
     public static void main(String[] args) {
-        System.out.println(getNanjiTianqi());
+        System.out.println(getNanjiTianqi(district_id));
     }
 }
