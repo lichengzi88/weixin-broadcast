@@ -1,4 +1,4 @@
-package ljc.weixin.tuisong.util;
+package com.weixin.tuisong.util;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -10,28 +10,21 @@ import java.text.SimpleDateFormat;
  * @Date 2022/8/2 17:32
  */
 public class JiNianRi {
+
     /**
      * 恋爱
      */
-    static String lianAi = "2019-06-07";
-    /**
-     * 求婚
-     */
-    static String jiLianRi = "2023-06-022";
+    static String lianAi = "";
+
     /**
      * 结婚
      */
-    //static String jieHun = "2022-07-08";
+    static String jieHun = "";
     /**
      * 生日
      */
-    static String shengRi = "2023-02-22";
+    static String shengRi = "";
 
-
-    /**
-     * 客户生日
-     */
-    static String shengRiJia = "2023-05-19";
 
     private static SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
@@ -68,12 +61,8 @@ public class JiNianRi {
         return day;
     }
 
-   /* public static int getJieHun() {
+    public static int getJieHun() {
         return before(jieHun);
-    }*/
-
-    public static int getJiLianRi() {
-        return before(jiLianRi);
     }
 
     public static int getLianAi() {
@@ -84,7 +73,4 @@ public class JiNianRi {
         return before(shengRi);
     }
 
-    public static int getShengRiJia(){
-        return before(shengRiJia);
-    }
 }

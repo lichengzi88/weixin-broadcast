@@ -1,4 +1,4 @@
-package ljc.weixin.tuisong.util;
+package com.weixin.tuisong.util;
 
 import com.alibaba.fastjson.JSONObject;
 import org.apache.commons.lang3.StringUtils;
@@ -18,10 +18,14 @@ import java.util.Random;
  * @Date 2022/8/2 17:26
  */
 public class CaiHongPi {
-    private static String key = "334117738bc596d0b59039e948a3fc14";
+
+    private static String key = "";
+
     private static String url = "http://api.tianapi.com/zaoan/index?key=";
+
     private static List<String> jinJuList = new ArrayList<>();
-    private static String name = "胜胜宝贝";
+
+    private static String name = "宝贝";
 
     public static String getCaiHongPi() {
         //默认彩虹屁

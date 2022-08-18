@@ -1,4 +1,4 @@
-package ljc.weixin.tuisong.util;
+package com.weixin.tuisong.util;
 
 
 import com.alibaba.fastjson.JSONArray;
@@ -11,12 +11,12 @@ import com.alibaba.fastjson.JSONObject;
  * @Date 2022/8/2 16:45
  */
 public class Tianqi {
-    private static String ak = "c2krpmnsMGjiDjmUnYMLHeICR0meZ2y6";
-    public static String district_id = "430111";// 长沙
 
-    public static String district_id_jia = "510800";// 广元
+    private static String ak = "";
 
-    public static JSONObject getNanjiTianqi(String district_id) {
+    public static String district_id = "";//
+
+    public static JSONObject getNanjiTianqi() {
         String result = null;
         JSONObject today = new JSONObject();
         try {
@@ -33,6 +33,6 @@ public class Tianqi {
     }
 
     public static void main(String[] args) {
-        System.out.println(getNanjiTianqi(district_id));
+        System.out.println(getNanjiTianqi());
     }
 }

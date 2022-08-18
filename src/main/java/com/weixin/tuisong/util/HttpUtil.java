@@ -1,4 +1,4 @@
-package ljc.weixin.tuisong.util;
+package com.weixin.tuisong.util;
 
 import java.io.Closeable;
 import java.io.IOException;
